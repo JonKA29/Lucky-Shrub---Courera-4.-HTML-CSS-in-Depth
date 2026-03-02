@@ -8,3 +8,6 @@ What's in this repo:
 1. HTML file
 2. CSS file
 3. Assets (Images & Logos)
+
+You can directly view the webpage here:
+https://lucky-shrub-jonathanka-coursera-4-html-css-in-d.vercel.app/
