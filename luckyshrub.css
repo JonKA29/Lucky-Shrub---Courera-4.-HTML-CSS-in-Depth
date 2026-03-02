@@ -1,0 +1,653 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: roboto, montserrat, Funnel Display, Raleway, Lexend Deca ;
+    font-weight: 400;
+}
+
+p{
+    font-size: 16px;
+}
+
+h6 {
+    font-size: 1.25rem;
+}
+
+h5{
+    font-size: 1.5625rem;
+}
+
+h4 {
+    font-size: 1.95rem;
+}
+
+h3 {
+    font-size: 2.44rem;
+    letter-spacing: -0.6px;
+}
+
+h2 {
+    font-size: 3.05rem;
+}
+
+h1 {
+    font-size: 3.8147rem;
+    letter-spacing: -1.5px;
+}
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 680px;
+    padding: 1.5em 2em 2em 2em;
+
+    background-color: #f2f2f2;
+}
+
+header {
+    display: flex;
+    max-height: 100px;
+
+    padding: 1.5em 2em 0 2em;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.header-logo-container {
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 1;
+    width: 100px;
+    height: 80px;
+    object-fit: contain;
+
+}
+    .header-logo-container a{
+        display: flex;
+        
+    }
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+    list-style: none;
+
+    justify-content: flex-start;
+    align-items: center;
+
+}
+    .navbar ul a:hover {
+        color: grey;
+    }
+    .navbar img {
+        display: none;
+    }
+
+a {
+    text-decoration: none;
+    color: rgb(35, 35, 35);
+}
+
+/*-------------------------------------------------------HOME*/
+
+#home {
+    position: relative;
+}
+
+#home:before {
+    content:"";
+    position: absolute;
+    background: url(./Assets/seamless-dotted-repeated-texture-black-and-white-polka-dot-pattern-repeated-endless-dots-backdrop-all-over-halftone-wallpa.jpg) center fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+}
+
+.home-section-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    grid-template-rows: auto repeat(2, minmax(50px, 1fr));
+    grid-template-areas: 
+    "head head head desc"
+    "img1 img1 img1 img2"
+    "img3 img3 quote quote";
+
+    gap: 2em;
+}
+
+.home-title {
+    grid-area: head;
+    align-content: end;
+}
+
+.home-title h1 {
+    font-family: montserrat, Lexend Deca, Raleway;
+    font-weight: 900;
+    
+    line-height: 0.8;
+    text-align: right;
+}
+
+.home-description {
+    grid-area: desc;
+    align-content: center;
+}
+
+.home-img {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    height: 65vh;
+}
+
+.home-img-area {
+    overflow: hidden;
+    height: 65vh;
+    
+}
+
+.home-img:nth-of-type(3) {
+    grid-area: img1;
+    justify-content: end;
+    object-fit: fill;
+    
+}
+.home-img:nth-of-type(4) {
+    grid-area: img2;
+}
+.home-img:nth-of-type(5) {
+    grid-area: img3;
+}
+    .home-img-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
+.home-img-desc {
+    margin: 0.5em
+}
+
+.home-img-desc p{
+    line-height: 0.9;
+    text-align: right;
+}
+
+.home-quote {
+    grid-area: quote;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+
+    text-wrap: wrap;
+    line-height: 1;
+    padding: 0 7em;
+}
+
+.home-quote h2 {
+    font-family: montserrat;
+    font-weight: 800;
+    font-size: clamp(5em, 15vw, 15vw);
+}
+
+.home-quote h3 {
+    font-family: montserrat;
+    font-size: 2em;
+    text-align: center;
+}
+
+/*----------------------------PRODUCT*/
+
+
+.product-container {
+    position: relative;
+    max-width: 90%;
+    margin: 50px auto;
+}
+
+.product-heading {
+    z-index: 1;
+    margin-top: 1rem;
+    width: 100%;
+}
+    .product-heading h6 {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: 2em;
+        
+        gap: 2em;
+        
+    }
+    .product-heading h6:before {
+        
+        content:"";
+        flex: 1 1 80%;
+        height: 1px;
+        width: 80%;
+        background-color: lightgray;
+        border-radius: 50px;
+    }
+
+
+.product-carousel {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 2em;
+    min-height: 70vh;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    margin: 1rem;
+    padding: 0 3rem;
+    background-color: lightgray;
+    
+}
+
+.product-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    display: flex;
+    flex: 0 0 20em;
+    aspect-ratio: 3/4;
+
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    overflow: hidden;
+    background-color: #f2f2f2;
+
+    position: relative;
+}
+    .product-carousel .card img {
+        flex: 1 0 100%;
+        scroll-snap-align: start;
+        object-fit: contain;
+        justify-self: center;
+        
+    }
+    .product-carousel .card:after {
+        content:"";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left:0;
+
+        background-color: rgba(0, 0, 0, 0);
+        z-index: 10;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        white-space: pre;
+        font-size: larger;
+        text-align: center;
+        color: #f2f2f2;
+    }
+        .product-carousel .card:hover:after{
+            background-color: rgba(0, 0, 0, 0.5);
+            
+        }
+            .product-carousel .card:nth-of-type(1):hover:after {
+                content: "Monstera\A $5";
+            }
+            .product-carousel .card:nth-of-type(2):hover:after {
+                content: "Traveler's Palm\A $6.5";
+            }
+            .product-carousel .card:nth-of-type(3):hover:after {
+                content: "Parlor Palm\A $8";
+            }
+            .product-carousel .card:nth-of-type(4):hover:after {
+                content: "Snake Plant\A $10";
+            }
+            .product-carousel .card:nth-of-type(5):hover:after {
+                content: "Snake Plant\A $12";
+            }
+            .product-carousel .card:nth-of-type(6):hover:after {
+                content: "Mother-In-Law's\ATongue\A $9";
+            }
+
+
+.product-carousel-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 0rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+
+    margin-top: 10px;
+}
+
+.product-carousel-nav a {
+    height: 0.5em;
+    width: 0.5em;
+    background-color: gray;
+    border-radius: 50px;
+}
+
+.product-carousel-nav a:hover {
+    background-color: rgb(0, 0, 0, 0.8);
+}
+
+
+
+
+
+/*----------------------------------ABOUT US----------*/
+
+.aboutUs-content-container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0;
+    margin-top: 2em;
+    width: 80%;
+
+    position: relative;
+}
+    .aboutUs-content-container:after {
+        position: absolute;
+        content: "";
+        width: 95vw;
+        height: 100%;
+        top: 0;
+        background: url(./Assets/seamless-dotted-repeated-texture-black-and-white-polka-dot-pattern-repeated-endless-dots-backdrop-all-over-halftone-wallpa.jpg) center fixed;
+        opacity: 0.3;
+        z-index: 0;
+        
+    }
+
+
+.aboutUs-content {
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    z-index: 1;
+}
+
+.aboutUs-card-container {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    gap: 2em;
+    height: auto;
+
+    padding: 0 2rem;
+
+}
+
+.aboutUs-card-container .card{
+    border-radius: 20px;
+}
+
+.aboutUs-card-container .card:nth-of-type(1){
+    rotate: -7deg;
+    z-index: 5;
+    transition: 0.3s ease;
+}
+    .aboutUs-card-container .card:nth-of-type(1):hover {
+        transform: rotate(4deg) scale(1.1);
+        
+    }
+
+.aboutUs-card-container .card:nth-of-type(2){
+    background-color: #a8b669;
+    rotate: 10deg;
+    margin-left: -80px;
+    z-index: 4;
+    transition: 0.3s ease;
+}
+    .aboutUs-card-container .card:nth-of-type(2):hover {
+        transform: rotate(4deg) scale(1.1);
+        z-index: 6;
+        
+    }
+    .aboutUs-card-container .card:nth-of-type(2) img {
+        transform: translateX(-30px);
+    }
+
+
+/*---------------------------------------FOOTER--------------------------------------*/
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 20vh;
+
+    padding: 0 3rem 3rem;
+    position: relative;
+}
+    footer:after{
+        content: "This website is a mock project created by Jonathan Agay for educational purposes as part of the Coursera HTML & CSS in Depth course by Meta. It is not a real business.";
+        position: absolute;
+        bottom: 0px;
+        color: rgb(115, 115, 115);
+        margin: 20px;
+        text-align: center;
+    }
+
+footer img {
+    filter: brightness(0.1);
+}
+
+.footer-address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .cta {
+    display: flex;
+    flex-direction: column;
+    text-decoration: underline;
+    text-decoration-color: lightgrey;
+}
+
+
+/*MEDIA QUERIES-----------------------------------------------------------------------------------*/
+@media (max-width: 1024px) {
+    .aboutUs-content-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutUs-card-container {
+    margin-top: 2rem;
+}
+}
+
+
+@media (max-width:854px) {
+    header {
+    display: flex;
+    max-height: 100px;
+
+    padding: 1.5em 2em;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+    .home-section-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto repeat(4, minmax(50px, 1fr));
+    grid-template-areas: 
+    "head desc"
+    "img1 img1"
+    "img2 img2"
+    "img3 img3"
+    "quote quote";
+
+    gap: 3em;
+
+
+}
+
+    .home-title {
+    grid-area: head;
+
+    align-content: end;
+}
+
+.home-title h1 {
+    text-align: left;
+}
+
+.home-description {
+    grid-area: desc;
+    align-content: center;
+
+    text-align: right;
+}
+.home-img:nth-of-type(3) {
+    grid-area: img1;
+    justify-content: end;
+    object-fit: fill;
+}
+.home-img:nth-of-type(4) {
+    grid-area: img2;
+}
+.home-img:nth-of-type(5) {
+    grid-area: img3;
+}
+    .home-img-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+    
+.home-quote {
+    grid-area: quote;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+
+    text-wrap: wrap;
+    line-height: 1;
+    padding: 0 7em;
+}
+
+.product-heading h6 {
+    margin-right: 0;
+}
+
+
+/*-----------------------------ABOUT US-----*/
+
+.aboutUs-content-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutUs-card-container {
+    margin-top: 2rem;
+}
+}
+
+
+@media (max-width: 520px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+        .navbar img{
+            display: block;
+            filter: brightness(0.5);
+            visibility: visible;
+        }
+        .navbar ul {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            background-color: rgba(255,255,255,0.125);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+
+            z-index: 999;
+            transform: translateY(-20px);
+            opacity: 0;
+            pointer-events: none;
+
+            transition: all 0.4s ease-in-out;
+        }
+        .navbar ul.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+            z-index: 999;
+        }
+    
+    .card {
+        flex: 0 0 11em;
+    }
+
+    footer {
+        height: 680px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 3em;
+        text-align: center;
+
+    }
+        .footer:after {
+            bottom: 0px;
+        }
+
+    .footer-quotes {
+        text-align: left;
+    }
+}
+
+@media  (max-width:345px) {
+    body {
+        font-size: 14px;
+    }
+
+    section{
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+
+
